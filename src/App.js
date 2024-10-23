@@ -42,6 +42,30 @@ function App() {
     }
   }
 
+  const handleMultiplyNumbers = () => {
+    if (firstNumber === '0') {
+      setFirstNumber(currentNumber);
+      setCurrentNumber('0');
+      setOperation('*');
+    } else {
+      const sum = Number(firstNumber) * Number(currentNumber);
+      setCurrentNumber(String(sum));
+      setOperation('');
+    }
+  }
+
+  const handleDivideNumbers = () => {
+    if (firstNumber === '0') {
+      setFirstNumber(currentNumber);
+      setCurrentNumber('0');
+      setOperation('/');
+    } else {
+      const sum = Number(firstNumber) / Number(currentNumber);
+      setCurrentNumber(String(sum));
+      setOperation('');
+    }
+  }
+
   const handleEquals = () => {
     if (firstNumber !== '0' && operation !== '' && currentNumber !== '0') {
       switch(operation){
@@ -51,6 +75,12 @@ function App() {
         case '-':
           handleMinusNumbers();
           break;
+        case '*':
+          handleMultiplyNumbers();
+          break;
+        case '/':
+        handleDivideNumbers();
+        break;
         default:
           break;
       }
@@ -63,8 +93,8 @@ function App() {
         <Content>
           <Input value={currentNumber} />
           <Row>
-            <Button label="x" />
-            <Button label="/"/>
+            <Button label="*" onClick={ handleMultiplyNumbers }/>
+            <Button label="/" onClick={ handleDivideNumbers }/>
             <Button label="C" onClick={ handleOnClear}/>
             <Button label="X"/>
           </Row>
