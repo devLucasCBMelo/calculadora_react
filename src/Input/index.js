@@ -1,8 +1,10 @@
+import { InputContainer } from "./styles";
+
 const Input = () => {
   return (
-    <div>
-      Olá
-    </div>
+    <InputContainer>
+      <input />
+    </InputContainer>
   )
 }
 

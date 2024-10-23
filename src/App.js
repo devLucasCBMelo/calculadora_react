@@ -1,3 +1,4 @@
+import Input from './Input';
 import { Container, Content } from './styles'
 
 function App() {
@@ -5,7 +6,7 @@ function App() {
     <div>
       <Container>
         <Content>
-          Olá
+          <Input />
         </Content>
       </Container>
     </div>
